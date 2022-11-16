@@ -1,12 +1,20 @@
 package gui;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import prac.Firstgui;
 
 public class mainFrame extends JFrame {
 	public mainFrame() {
@@ -17,12 +25,52 @@ public class mainFrame extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 	}
+	
+	class FirstGui extends JFrame{
+				private JTextArea PhoneNum_ta;
+				private JTextArea people_ta;
+				private JTextArea plus;
+				private JTextArea minus;
+			private	final String[] firstJB= {"1","2","3","4","5","6","7","8","9","delete","0","enter"};
+				private JButton[] jbtn=new JButton[12];
+				FirstGui(){
+					setTitle("식당 웨이팅 프로그램");
+					Container ct=getContentPane();
+					JPanel p1=new JPanel();
+					JPanel p2=new JPanel();
+					JPanel p3=new JPanel();
+					p1.setLayout(new FlowLayout());
+					PhoneNum_ta=new JTextArea(3,85);
+					PhoneNum_ta.setFont(new Font("굴림체",Font.BOLD,40));
+					p1.add(PhoneNum_ta);
+					people_ta=new JTextArea("예약 인원 수: ",3,90);
+					people_ta.setFont(new Font("굴림체",Font.BOLD,40));
+					p2.add(people_ta);
+					plus=new JTextArea("plus",2,15);
+					plus.setFont(new Font("굴림체",Font.BOLD,50));
+					minus=new JTextArea("minus",2,15);
+					minus.setFont(new Font("굴림체",Font.BOLD,50));
+					p2.add(plus);
+					p2.add(minus);
+					p3.setLayout(new GridLayout(4,3,15,10));
+					for(int i=0;i<firstJB.length;i++) {
+						p3.add(jbtn[i]=new JButton(firstJB[i]));
+						p3.setPreferredSize(new Dimension(300,550));
+						jbtn[i].setFont(new Font("돋움체",Font.BOLD,50));
+						if(i<11) {
+							jbtn[i].setBackground(Color.WHITE);
+						}else {
+							jbtn[i].setBackground(Color.GREEN);
+						}
+					}
+					ct.add(p1,BorderLayout.NORTH);
+					ct.add(p2,BorderLayout.CENTER);
+					ct.add(p3,BorderLayout.SOUTH);
+					setVisible(true);
+				}
+				
+			}		
 
-	class FirstGui extends JPanel {
-		public FirstGui() {
-
-		}
-	}
 
 	class SecondGui extends JPanel {
 		private JLabel secondLabel;
