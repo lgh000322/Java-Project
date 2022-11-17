@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.*;
+import data.*;
 /*
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,16 +19,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea; */
 
-
 public class mainFrame extends JFrame {
 	public mainFrame() {
 		FirstGui firstgui = new FirstGui();
 		SecondGui secondgui = new SecondGui();
 		ThirdGui thirdgui = new ThirdGui();
-		this.setSize(400,300);
+		this.setSize(400, 300);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 	}
+
 	
 	class FirstGui extends JPanel{
 				private JTextArea PhoneNum_ta;
@@ -79,8 +80,10 @@ public class mainFrame extends JFrame {
 	class SecondGui extends JPanel {
 		private JLabel secondLabel;
 		private JTextArea secondTextArea;
-
+		private data.SecondGui_T secondGui_T;
+		private String temp;
 		public SecondGui() {
+			secondGui_T=new data.SecondGui_T();
 			this.setLayout(new FlowLayout());
 			secondLabel = new JLabel("현재 웨이팅");
 			secondLabel.setSize(15, 15);
@@ -89,9 +92,10 @@ public class mainFrame extends JFrame {
 
 			secondTextArea = new JTextArea(5, 30);
 			secondTextArea.setEditable(false);
-			// secondTextArea.setFont(new Font("Arial", Font.PLAIN, 16));
-			// data패키지에서 몇팀있는지 읽어오는 getName()을 통해 몇팀이 있는지 출력할 예정
-			// secondTextArea.setText(d.getName());
+			secondTextArea.setFont(new Font("Arial", Font.PLAIN, 16));
+			//data패키지에서 몇팀있는지 읽어오는 getName()을 통해 몇팀이 있는지 출력할 예정
+			temp=secondGui_T.getstr();
+			secondTextArea.setText(temp);
 			this.add(secondTextArea);
 		}
 	}
@@ -99,14 +103,14 @@ public class mainFrame extends JFrame {
 	class ThirdGui extends JPanel {
 		private JLabel thirdLabel;
 		private JButton thirdJB;
-		
+
 		public ThirdGui() {
 			Container ct = getContentPane();
 			ct.setLayout(new FlowLayout());
 			thirdLabel = new JLabel("예약이 완료되었습니다");
 			thirdJB = new JButton("확인");
 			// 버튼 누르면 창 전환되게 하기 -> https://dinae.tistory.com/27
-			
+
 			ct.add(thirdJB);
 			ct.add(thirdLabel);
 			setSize(250, 150);
