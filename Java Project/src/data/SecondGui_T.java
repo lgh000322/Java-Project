@@ -11,7 +11,6 @@ public class SecondGui_T {
 	public String getstr() {
 		count++;
 		str = Integer.toString(count);
-
 		return str;
 	}
 }

@@ -1,17 +1,17 @@
 package gui;
 
-import java.awt.*;
-import data.*;
-/*
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout; */
+import java.awt.GridLayout;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 /*
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,14 +19,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea; */
 
-public class mainFrame extends JFrame {
+public class mainFrame {
 	public mainFrame() {
 		FirstGui firstgui = new FirstGui();
-		SecondGui secondgui = new SecondGui();
-		ThirdGui thirdgui = new ThirdGui();
-		this.setSize(400, 300);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
 	}
 
 	class FirstGui extends JFrame {
@@ -39,39 +34,41 @@ public class mainFrame extends JFrame {
 
 		FirstGui() {
 			setTitle("식당 웨이팅 프로그램");
-			Container ct = getContentPane();
+			this.setSize(400, 300);
+			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			this.setLocationRelativeTo(null);
+			this.setLayout(new FlowLayout());
 			JPanel p1 = new JPanel();
 			JPanel p2 = new JPanel();
 			JPanel p3 = new JPanel();
-			p1.setLayout(new FlowLayout());
-			PhoneNum_ta = new JTextArea(3, 85);
-			PhoneNum_ta.setFont(new Font("굴림체", Font.BOLD, 40));
+			p1.setLayout(new GridLayout(2,1,0,10));
+			PhoneNum_ta = new JTextArea(1, 30);
+			PhoneNum_ta.setEditable(false);
+			PhoneNum_ta.setFont(new Font("굴림체", Font.BOLD, 20));
 			p1.add(PhoneNum_ta);
-			people_ta = new JTextArea("예약 인원 수: ", 3, 90);
-			people_ta.setFont(new Font("굴림체", Font.BOLD, 40));
-			p2.add(people_ta);
+			people_ta = new JTextArea("예약 인원 수: ", 1, 30);
+			people_ta.setFont(new Font("굴림체", Font.BOLD, 15));
+			people_ta.setEditable(false);
+			p1.add(people_ta);
 			plus = new JButton("plus");
-			plus.setPreferredSize(new Dimension(300, 90));
-			plus.setFont(new Font("굴림체", Font.BOLD, 50));
+			plus.setFont(new Font("굴림체", Font.BOLD, 15));
 			minus = new JButton("minus");
-			minus.setPreferredSize(new Dimension(300, 90));
-			minus.setFont(new Font("굴림체", Font.BOLD, 50));
-			p2.add(plus);
-			p2.add(minus);
-			p3.setLayout(new GridLayout(4, 3, 15, 10));
+			minus.setFont(new Font("굴림체", Font.BOLD, 15));
+			p2.add(plus,BorderLayout.CENTER);
+			p2.add(minus,BorderLayout.EAST);
+			p3.setLayout(new GridLayout(4, 3, 10, 10));
 			for (int i = 0; i < firstJB.length; i++) {
 				p3.add(jbtn[i] = new JButton(firstJB[i]));
-				p3.setPreferredSize(new Dimension(300, 550));
-				jbtn[i].setFont(new Font("돋움체", Font.BOLD, 50));
+				jbtn[i].setFont(new Font("돋움체", Font.BOLD, 15));
 				if (i < 11) {
 					jbtn[i].setBackground(Color.WHITE);
 				} else {
 					jbtn[i].setBackground(Color.GREEN);
 				}
 			}
-			ct.add(p1, BorderLayout.NORTH);
-			ct.add(p2, BorderLayout.CENTER);
-			ct.add(p3, BorderLayout.SOUTH);
+			this.add(p1, BorderLayout.NORTH);
+			this.add(p2, BorderLayout.CENTER);
+			this.add(p3, BorderLayout.SOUTH);
 			setVisible(true);
 		}
 
@@ -79,7 +76,7 @@ public class mainFrame extends JFrame {
 
 	class SecondGui extends JPanel {
 		private JLabel secondLabel;
-		private JTextArea secondTextArea;
+		public JTextArea secondTextArea;
 		private data.SecondGui_T secondGui_T;
 		private String temp;
 		public SecondGui() {
@@ -93,7 +90,7 @@ public class mainFrame extends JFrame {
 			secondTextArea = new JTextArea(5, 30);
 			secondTextArea.setEditable(false);
 			secondTextArea.setFont(new Font("Arial", Font.PLAIN, 16));
-			//data패키지에서 몇팀있는지 읽어오는 getName()을 통해 몇팀이 있는지 출력할 예정
+			//data패키지에서 몇팀있는지 읽어오는 getstr()을 통해 몇팀이 있는지 출력할 예정
 			temp=secondGui_T.getstr();
 			secondTextArea.setText(temp);
 			this.add(secondTextArea);
@@ -105,14 +102,13 @@ public class mainFrame extends JFrame {
 		private JButton thirdJB;
 
 		public ThirdGui() {
-			Container ct = getContentPane();
-			ct.setLayout(new FlowLayout());
+			this.setLayout(new FlowLayout());
 			thirdLabel = new JLabel("예약이 완료되었습니다");
 			thirdJB = new JButton("확인");
 			// 버튼 누르면 창 전환되게 하기 -> https://dinae.tistory.com/27
 
-			ct.add(thirdJB);
-			ct.add(thirdLabel);
+			this.add(thirdJB);
+			this.add(thirdLabel);
 			setSize(250, 150);
 			setVisible(true);
 		}
