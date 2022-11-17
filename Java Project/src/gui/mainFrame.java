@@ -29,7 +29,7 @@ public class mainFrame extends JFrame {
 		this.setLocationRelativeTo(null);
 	}
 	
-	class FirstGui extends JFrame{
+	class FirstGui extends JPanel{
 				private JTextArea PhoneNum_ta;
 				private JTextArea people_ta;
 				private JButton plus;
@@ -37,7 +37,6 @@ public class mainFrame extends JFrame {
 			private	final String[] firstJB= {"1","2","3","4","5","6","7","8","9","delete","0","enter"};
 				private JButton[] jbtn=new JButton[12];
 				FirstGui(){
-					setTitle("식당 웨이팅 프로그램");
 					Container ct=getContentPane();
 					JPanel p1=new JPanel();
 					JPanel p2=new JPanel();
