@@ -1,18 +1,22 @@
 package gui;
 
+import java.awt.*;
+/*
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.GridLayout; */
 
+import javax.swing.*;
+/*
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JTextArea; */
 
 import prac.Firstgui;
 
@@ -93,8 +97,20 @@ public class mainFrame extends JFrame {
 	}
 
 	class ThirdGui extends JPanel {
+		private JLabel thirdLabel;
+		private JButton thirdJB;
+		
 		public ThirdGui() {
-
+			Container ct = getContentPane();
+			ct.setLayout(new FlowLayout());
+			thirdLabel = new JLabel("예약이 완료되었습니다");
+			thirdJB = new JButton("확인");
+			// 버튼 누르면 창 전환되게 하기 -> https://dinae.tistory.com/27
+			
+			ct.add(thirdJB);
+			ct.add(thirdLabel);
+			setSize(250, 150);
+			setVisible(true);
 		}
 	}
 }
