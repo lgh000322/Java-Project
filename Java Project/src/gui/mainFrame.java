@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea; */
 
-import prac.Firstgui;
 
 public class mainFrame extends JFrame {
 	public mainFrame() {
@@ -33,8 +32,8 @@ public class mainFrame extends JFrame {
 	class FirstGui extends JFrame{
 				private JTextArea PhoneNum_ta;
 				private JTextArea people_ta;
-				private JTextArea plus;
-				private JTextArea minus;
+				private JButton plus;
+				private JButton minus;
 			private	final String[] firstJB= {"1","2","3","4","5","6","7","8","9","delete","0","enter"};
 				private JButton[] jbtn=new JButton[12];
 				FirstGui(){
@@ -50,9 +49,11 @@ public class mainFrame extends JFrame {
 					people_ta=new JTextArea("예약 인원 수: ",3,90);
 					people_ta.setFont(new Font("굴림체",Font.BOLD,40));
 					p2.add(people_ta);
-					plus=new JTextArea("plus",2,15);
+					plus=new JButton("plus");
+					plus.setPreferredSize(new Dimension(300,90));
 					plus.setFont(new Font("굴림체",Font.BOLD,50));
-					minus=new JTextArea("minus",2,15);
+					minus=new JButton("minus");
+					minus.setPreferredSize(new Dimension(300,90));
 					minus.setFont(new Font("굴림체",Font.BOLD,50));
 					p2.add(plus);
 					p2.add(minus);
