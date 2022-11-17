@@ -74,7 +74,7 @@ public class mainFrame {
 
 	}
 
-	class SecondGui extends JPanel {
+	class SecondGui extends JFrame {
 		private JLabel secondLabel;
 		public JTextArea secondTextArea;
 		private data.SecondGui_T secondGui_T;
@@ -97,7 +97,7 @@ public class mainFrame {
 		}
 	}
 
-	class ThirdGui extends JPanel {
+	class ThirdGui extends JFrame {
 		private JLabel thirdLabel;
 		private JButton thirdJB;
 
