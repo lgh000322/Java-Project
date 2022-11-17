@@ -36,7 +36,7 @@ public class mainFrame extends JFrame {
 				private JButton minus;
 			private	final String[] firstJB= {"1","2","3","4","5","6","7","8","9","delete","0","enter"};
 				private JButton[] jbtn=new JButton[12];
-				FirstGui(){
+				public FirstGui(){
 					Container ct=getContentPane();
 					JPanel p1=new JPanel();
 					JPanel p2=new JPanel();
