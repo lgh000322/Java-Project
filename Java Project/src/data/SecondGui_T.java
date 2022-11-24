@@ -10,7 +10,6 @@ public class SecondGui_T{
 
 	public String getstr() {
 		str = Integer.toString(count);
-		System.out.println("getstr의 count "+count);
 		count+=1;
 		return str;
 	}

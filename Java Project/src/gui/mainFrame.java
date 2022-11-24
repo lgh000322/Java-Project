@@ -88,9 +88,7 @@ public class mainFrame {
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					peopleCount++;
-					System.out.println("peoplecount: " + peopleCount);
 					temp = Integer.toString(peopleCount);
-					System.out.println("temp " + temp);
 					people_ta.setText("예약 인원 수: " + temp);
 				}
 
@@ -105,9 +103,7 @@ public class mainFrame {
 
 					if (peopleCount >= 1) {
 						peopleCount--;
-						System.out.println("peoplecount: " + peopleCount);
 						temp = Integer.toString(peopleCount);
-						System.out.println("temp " + temp);
 						people_ta.setText("예약 인원 수: " + temp);
 					} else
 						System.out.println("잘못된 입력");
@@ -117,82 +113,118 @@ public class mainFrame {
 			});
 
 			jbtn[0].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("1");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[1].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("2");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[2].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("3");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[3].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("4");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[4].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("5");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[5].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("6");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[6].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("7");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[7].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("8");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[8].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("9");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
@@ -204,7 +236,6 @@ public class mainFrame {
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					temp = PhoneNum_ta.getText();
-					System.out.println("temp값 " + temp);
 					if (temp.length() >= 1)
 						temp = temp.substring(0, temp.length() - 1);
 					PhoneNum_ta.setText(temp);
@@ -213,10 +244,14 @@ public class mainFrame {
 			});
 
 			jbtn[10].addActionListener(new ActionListener() {
+				String temp;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("0");
+					temp=PhoneNum_ta.getText();
+					if(temp.length()==3||temp.length()==8)
+						PhoneNum_ta.append("-");
 				}
 
 			});
@@ -273,13 +308,11 @@ public class mainFrame {
 			secondTextArea.setText("\n" + "               " + temp + " Teams");
 			this.add(secondTextArea);
 			this.add(jbtn);
-			System.out.println("temp값: " + temp);
 
 			jbtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					temp = secondGui_T.getstr();
 					secondTextArea.setText("\n" + "               " + temp + " Teams");
-					System.out.println("temp값: " + temp);
 					thirdgui.setVisible(true);
 				}
 			});
