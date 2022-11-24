@@ -294,9 +294,8 @@ public class mainFrame {
 
 		public ThirdGui() {
 			this.setLayout(new FlowLayout());
-			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 			this.setLocationRelativeTo(null);
-			this.setTitle("예약 완료 창");
+			this.setTitle("예약 완료창");
 			thirdLabel = new JLabel("예약이 완료되었습니다");
 			thirdLabel.setSize(15, 15);
 			thirdLabel.setFont(new Font("Gothic", Font.BOLD, 17));
@@ -322,9 +321,8 @@ public class mainFrame {
 
 		public alert() {
 			this.setLayout(new FlowLayout());
-			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 			this.setLocationRelativeTo(null);
-			this.setTitle("경고 알림 창");
+			this.setTitle("경고 알림창");
 			alertLabel = new JLabel("정보를 입력해주세요.");
 			alertLabel.setSize(18, 18);
 			alertLabel.setFont(new Font("Gothic", Font.BOLD, 18));
