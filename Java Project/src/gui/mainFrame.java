@@ -2,26 +2,28 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-/*
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea; */
+
 
 public class mainFrame {
+	FirstGui firstgui;
+	SecondGui secondgui;
+	ThirdGui thirdgui;
 	public mainFrame() {
-		FirstGui firstgui = new FirstGui();
+		firstgui = new FirstGui();
+		secondgui=new SecondGui();
+		thirdgui=new ThirdGui();
+		firstgui.setVisible(true);
 	}
 
 	class FirstGui extends JFrame {
@@ -31,31 +33,37 @@ public class mainFrame {
 		private JButton minus;
 		private final String[] firstJB = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "delete", "0", "enter" };
 		private JButton[] jbtn = new JButton[12];
-
+		private int peopleCount=0;
 		FirstGui() {
 			setTitle("식당 웨이팅 프로그램");
 			this.setSize(400, 300);
 			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 			this.setLocationRelativeTo(null);
+			this.setResizable(false);
 			this.setLayout(new FlowLayout());
+			
 			JPanel p1 = new JPanel();
 			JPanel p2 = new JPanel();
 			JPanel p3 = new JPanel();
+			
 			p1.setLayout(new GridLayout(2,1,0,10));
 			PhoneNum_ta = new JTextArea(1, 30);
 			PhoneNum_ta.setEditable(false);
 			PhoneNum_ta.setFont(new Font("굴림체", Font.BOLD, 20));
 			p1.add(PhoneNum_ta);
-			people_ta = new JTextArea("예약 인원 수: ", 1, 30);
+			
+			people_ta = new JTextArea("예약 인원 수: 0", 1, 30);
 			people_ta.setFont(new Font("굴림체", Font.BOLD, 15));
 			people_ta.setEditable(false);
 			p1.add(people_ta);
+			
 			plus = new JButton("plus");
 			plus.setFont(new Font("굴림체", Font.BOLD, 15));
 			minus = new JButton("minus");
 			minus.setFont(new Font("굴림체", Font.BOLD, 15));
 			p2.add(plus,BorderLayout.CENTER);
 			p2.add(minus,BorderLayout.EAST);
+			
 			p3.setLayout(new GridLayout(4, 3, 10, 10));
 			for (int i = 0; i < firstJB.length; i++) {
 				p3.add(jbtn[i] = new JButton(firstJB[i]));
@@ -69,7 +77,161 @@ public class mainFrame {
 			this.add(p1, BorderLayout.NORTH);
 			this.add(p2, BorderLayout.CENTER);
 			this.add(p3, BorderLayout.SOUTH);
-			setVisible(true);
+		
+			plus.addActionListener(new ActionListener() {
+				String temp;
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					peopleCount++;
+					System.out.println("peoplecount: "+peopleCount);
+					temp=Integer.toString(peopleCount);
+					System.out.println("temp "+temp);
+					people_ta.setText("예약 인원 수: "+temp);
+				}
+				
+			});
+			
+			minus.addActionListener(new ActionListener() {
+				String temp;
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					
+					if(peopleCount>=1)
+						{
+							peopleCount--;
+							System.out.println("peoplecount: "+peopleCount);
+							temp=Integer.toString(peopleCount);
+							System.out.println("temp "+temp);
+							people_ta.setText("예약 인원 수: "+temp);
+						}
+					else
+						System.out.println("잘못된 입력");
+					
+				}
+				
+			});
+			
+			jbtn[0].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("1");
+				}
+				
+			});
+			
+			jbtn[1].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("2");
+				}
+				
+			});
+			
+			jbtn[2].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("3");
+				}
+				
+			});
+			
+			jbtn[3].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("4");
+				}
+				
+			});
+			
+			jbtn[4].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("5");
+				}
+				
+			});
+			
+			jbtn[5].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("6");
+				}
+				
+			});
+			
+			jbtn[6].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("7");
+				}
+				
+			});
+			
+			jbtn[7].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("8");
+				}
+				
+			});
+			
+			jbtn[8].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("9");
+				}
+				
+			});
+			
+			jbtn[9].addActionListener(new ActionListener() {
+				String temp;
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					temp=PhoneNum_ta.getText();
+					System.out.println("temp값 "+temp);
+					if(temp.length()>=1)
+						temp=temp.substring(0, temp.length()-1);
+					PhoneNum_ta.setText(temp);
+				}
+				
+			});
+			
+			jbtn[10].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					PhoneNum_ta.append("0");
+				}
+				
+			});
+			
+			
+			jbtn[11].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					firstgui.setVisible(false);
+					PhoneNum_ta.setText("");
+					people_ta.setText("예약 인원 수: 0");
+					secondgui.setVisible(true);
+				}
+				
+			});
+		
 		}
 
 	}
@@ -78,8 +240,12 @@ public class mainFrame {
 		private JLabel secondLabel;
 		public JTextArea secondTextArea;
 		private data.SecondGui_T secondGui_T;
+		private JButton jbtn;
 		private String temp;
 		public SecondGui() {
+			this.setSize(400,300);
+			this.setLocationRelativeTo(null);
+			jbtn=new JButton("확인");
 			secondGui_T=new data.SecondGui_T();
 			this.setLayout(new FlowLayout());
 			secondLabel = new JLabel("현재 웨이팅");
@@ -87,14 +253,29 @@ public class mainFrame {
 			secondLabel.setFont(new Font("Gothic", Font.BOLD, 50));
 			this.add(secondLabel);
 
-			secondTextArea = new JTextArea(5, 30);
+			secondTextArea = new JTextArea(3, 15);
 			secondTextArea.setEditable(false);
-			secondTextArea.setFont(new Font("Arial", Font.PLAIN, 16));
-			//data패키지에서 몇팀있는지 읽어오는 getstr()을 통해 몇팀이 있는지 출력할 예정
+			secondTextArea.setFont(new Font("Arial", Font.PLAIN, 40));
 			temp=secondGui_T.getstr();
-			secondTextArea.setText(temp);
+			secondTextArea.setText("\n"+"               "+temp+" Teams");
 			this.add(secondTextArea);
+			this.add(jbtn);
+			System.out.println("temp값: "+temp);
+		
+			jbtn.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e)
+				{
+					temp=secondGui_T.getstr();
+					secondTextArea.setText("\n"+"               "+temp+" Teams");
+					System.out.println("temp값: "+temp);
+					thirdgui.setVisible(true);
+				}
+			});
+			
+					
 		}
+		
+
 	}
 
 	class ThirdGui extends JFrame {
@@ -103,14 +284,26 @@ public class mainFrame {
 
 		public ThirdGui() {
 			this.setLayout(new FlowLayout());
+			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			this.setLocationRelativeTo(null);
+			this.setTitle("예약 완료 창");
 			thirdLabel = new JLabel("예약이 완료되었습니다");
+			thirdLabel.setSize(15, 15);
+			thirdLabel.setFont(new Font("Gothic", Font.BOLD, 17));
 			thirdJB = new JButton("확인");
 			// 버튼 누르면 창 전환되게 하기 -> https://dinae.tistory.com/27
 
-			this.add(thirdJB);
 			this.add(thirdLabel);
+			this.add(thirdJB);
+			thirdJB.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e)
+				{
+					setVisible(false);
+					firstgui.setVisible(true);
+				}
+			});
 			setSize(250, 150);
-			setVisible(true);
+			
 		}
 	}
 }
