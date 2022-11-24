@@ -245,6 +245,7 @@ public class mainFrame {
 		public SecondGui() {
 			this.setSize(400,300);
 			this.setLocationRelativeTo(null);
+			this.setTitle("현재 대기중인 팀");
 			jbtn=new JButton("확인");
 			secondGui_T=new data.SecondGui_T();
 			this.setLayout(new FlowLayout());
