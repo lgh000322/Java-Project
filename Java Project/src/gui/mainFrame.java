@@ -311,7 +311,7 @@ public class mainFrame {
 					firstgui.setVisible(true);
 				}
 			});
-			setSize(250, 150);
+			setSize(250, 100);
 
 		}
 	}
@@ -338,7 +338,7 @@ public class mainFrame {
 					setVisible(false);
 				}
 			});
-			setSize(250, 150);
+			setSize(250, 100);
 
 		}
 	}
