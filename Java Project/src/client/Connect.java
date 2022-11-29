@@ -47,20 +47,23 @@ public class Connect {
 
 		public void run() {
 			while (true) {
-				String temp = "";
+				String temp = null;
 				try {
-					temp = br.readLine();
-					
+					temp = new String(br.readLine());
+
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch(Exception e)
+				{
 					e.printStackTrace();
 				}
 
 				if (temp.equals("1")) {
 					int count = 0;
 					count = mainFrame.secondgui.count--;
-					mainFrame.secondgui.secondTextArea.setText("\n" + "               " + (count-1) + " Teams");
-					
+					mainFrame.secondgui.secondTextArea.setText("\n" + "               " + (count - 1) + " Teams");
+
 				}
 
 			}

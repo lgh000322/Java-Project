@@ -280,7 +280,7 @@ public class mainFrame {
 					// TODO Auto-generated method stub
 					Message[0] = PhoneNum_ta.getText();
 					Message[1] = people_ta.getText();
-					if (Message[0].equals("") && Message[1].equals("예약 인원 수: 0")) {
+					if (Message[0].equals("") || Message[1].equals("예약 인원 수: 0")) {
 						alert.setVisible(true);
 					} else {
 
