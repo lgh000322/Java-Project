@@ -1,4 +1,4 @@
-package gui;
+package client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -7,6 +7,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.UnknownHostException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,18 +16,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+
+
 public class mainFrame {
 	FirstGui firstgui;
-	SecondGui secondgui;
+	static SecondGui secondgui;
 	ThirdGui thirdgui;
 	alert alert;
+	Connect connect;
+	public String Message[] = new String[2];
 
-	public mainFrame() {
+	public mainFrame() throws UnknownHostException, IOException {
 		firstgui = new FirstGui();
 		secondgui = new SecondGui();
 		thirdgui = new ThirdGui();
 		alert = new alert();
 		firstgui.setVisible(true);
+		connect = new Connect();
 	}
 
 	class FirstGui extends JFrame {
@@ -114,12 +121,13 @@ public class mainFrame {
 
 			jbtn[0].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("1");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -127,12 +135,13 @@ public class mainFrame {
 
 			jbtn[1].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("2");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -140,12 +149,13 @@ public class mainFrame {
 
 			jbtn[2].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("3");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -153,12 +163,13 @@ public class mainFrame {
 
 			jbtn[3].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("4");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -166,12 +177,13 @@ public class mainFrame {
 
 			jbtn[4].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("5");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -179,12 +191,13 @@ public class mainFrame {
 
 			jbtn[5].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("6");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -192,12 +205,13 @@ public class mainFrame {
 
 			jbtn[6].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("7");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -205,12 +219,13 @@ public class mainFrame {
 
 			jbtn[7].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("8");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -218,12 +233,13 @@ public class mainFrame {
 
 			jbtn[8].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("9");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
@@ -245,34 +261,35 @@ public class mainFrame {
 
 			jbtn[10].addActionListener(new ActionListener() {
 				String temp;
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					PhoneNum_ta.append("0");
-					temp=PhoneNum_ta.getText();
-					if(temp.length()==3||temp.length()==8)
+					temp = PhoneNum_ta.getText();
+					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
 				}
 
 			});
 
 			jbtn[11].addActionListener(new ActionListener() {
-				String temp[] = new String[2];
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					temp[0] = PhoneNum_ta.getText();
-					temp[1] = people_ta.getText();
-					if (temp[0].equals("") && temp[1].equals("예약 인원 수: 0")) {
-						System.out.println("정보를 입력해주세요.");
+					Message[0] = PhoneNum_ta.getText();
+					Message[1] = people_ta.getText();
+					if (Message[0].equals("") && Message[1].equals("예약 인원 수: 0")) {
 						alert.setVisible(true);
 					} else {
+
 						firstgui.setVisible(false);
 						PhoneNum_ta.setText("");
 						people_ta.setText("예약 인원 수: 0");
 						peopleCount = 0;
 						secondgui.setVisible(true);
+
 					}
 				}
 
@@ -285,16 +302,13 @@ public class mainFrame {
 	class SecondGui extends JFrame {
 		private JLabel secondLabel;
 		public JTextArea secondTextArea;
-		private data.SecondGui_T secondGui_T;
-		private JButton jbtn;
-		private String temp;
-
+		private JButton jbtn;	
+		public int count=0;
 		public SecondGui() {
 			this.setSize(400, 300);
 			this.setLocationRelativeTo(null);
 			this.setTitle("현재 대기중인 팀");
 			jbtn = new JButton("확인");
-			secondGui_T = new data.SecondGui_T();
 			this.setLayout(new FlowLayout());
 			secondLabel = new JLabel("현재 웨이팅");
 			secondLabel.setSize(15, 15);
@@ -304,15 +318,22 @@ public class mainFrame {
 			secondTextArea = new JTextArea(3, 15);
 			secondTextArea.setEditable(false);
 			secondTextArea.setFont(new Font("Arial", Font.PLAIN, 40));
-			temp = secondGui_T.getstr();
-			secondTextArea.setText("\n" + "               " + temp + " Teams");
+			secondTextArea.setText("\n" + "               " + "0" + " Teams");
 			this.add(secondTextArea);
 			this.add(jbtn);
 
 			jbtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					temp = secondGui_T.getstr();
-					secondTextArea.setText("\n" + "               " + temp + " Teams");
+					count++;
+					secondTextArea.setText("\n" + "               " + count + " Teams");
+					try {
+						Connect.send(Message[0], Message[1]);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					Message[0] = "";
+					Message[1] = "";
 					thirdgui.setVisible(true);
 				}
 			});
@@ -340,6 +361,7 @@ public class mainFrame {
 			thirdJB.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(false);
+					secondgui.setVisible(false);
 					firstgui.setVisible(true);
 				}
 			});
