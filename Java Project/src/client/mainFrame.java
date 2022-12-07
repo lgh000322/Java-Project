@@ -125,10 +125,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("1");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("1");
 				}
 
 			});
@@ -139,10 +140,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("2");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("2");
 				}
 
 			});
@@ -153,10 +155,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("3");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("3");
 				}
 
 			});
@@ -167,10 +170,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("4");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("4");
 				}
 
 			});
@@ -181,10 +185,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("5");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("5");
 				}
 
 			});
@@ -195,10 +200,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("6");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("6");
 				}
 
 			});
@@ -209,10 +215,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("7");
+				
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("7");
 				}
 
 			});
@@ -223,10 +230,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("8");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("8");
 				}
 
 			});
@@ -237,10 +245,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("9");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("9");
 				}
 
 			});
@@ -265,10 +274,11 @@ public class mainFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					PhoneNum_ta.append("0");
+					
 					temp = PhoneNum_ta.getText();
 					if (temp.length() == 3 || temp.length() == 8)
 						PhoneNum_ta.append("-");
+					PhoneNum_ta.append("0");
 				}
 
 			});
